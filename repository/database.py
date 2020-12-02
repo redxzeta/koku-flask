@@ -1,12 +1,12 @@
 import sys
-
+import os
 
 from repository.mongo.MongoDB import *
 
 
-USERNAME = sys.argv[1]
-PASS = sys.argv[2]
-DB_NAME = sys.argv[3]
+USERNAME = os.environ.get("MONGOUSER")
+PASS = os.environ.get("PASS")
+DB_NAME = os.environ.get("DB_NAME")
 COLLECTIONS = { "koku": DEFAULT}
 
 URL = f"mongodb+srv://{USERNAME}:{PASS}@cluster0.hhjqb.mongodb.net/{DB_NAME}?retryWrites=true&w=majority"
