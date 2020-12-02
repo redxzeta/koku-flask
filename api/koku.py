@@ -26,3 +26,8 @@ def get_koku_by_id(_id):
 @koku.route('/koku/<_id>/category', methods=['GET'])
 def get_koku_categories_by_id(_id):
     return jsonify(koku_service.get_koku_categories_by_id(_id)['categories'])
+
+
+@koku.route('/koku/<_id>/category/<category_id>', methods=['GET'])
+def get_koku_categories_items_by_id(_id, category_id):
+    return jsonify(koku_service.get_koku_categories_by_id(_id)['categories'])

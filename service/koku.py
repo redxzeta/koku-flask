@@ -18,3 +18,6 @@ class KokuService:
 
     def get_koku_categories_by_id(self, _id):
         return self.__koku.find_by_id(_id)
+
+    def get_koku_categories_items_by_id(self,_id, category_id):
+        return self.__koku.find_by_id(_id)
