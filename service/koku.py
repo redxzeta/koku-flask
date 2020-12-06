@@ -13,8 +13,11 @@ class KokuService:
     def get_kokus(self):
         return self.__koku.find_all()
 
-    def get_koku_by_id(self,_id):
+    def get_koku_by_id(self, _id):
         return self.__koku.find_by_id(_id)
 
     def get_koku_categories_by_id(self, _id):
         return self.__koku.find_by_id(_id)
+
+    def get_item_of_category_by_id(self, _id, _item_id):
+        return self.__koku.find_by_children(_id, _item_id)

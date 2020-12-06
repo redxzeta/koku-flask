@@ -52,6 +52,21 @@ class Collection:
             return {}
         return tmp[0]
 
+    def find_by_children(self, _id: any, _children_id: any) -> list:
+        parent_list = self.find_by_id(_id)
+        tmp = parent_list['categories']
+        check = {}
+        for item in tmp:
+            if item["_id"] == _children_id:
+                check = item
+                break;
+
+        if len(tmp) == 0:
+            print('no')
+            return {}
+
+        return check
+
     # insertion functions
     # normal, all, id,
     def add(self, entity: dict):
