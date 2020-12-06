@@ -1,5 +1,8 @@
 # koku-flask
 
+Setting up a backend for one of project gigs
+
+
 1. Install poetry https://python-poetry.org/docs/
 
 1. `poetry install` to install dependencies
