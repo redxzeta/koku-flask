@@ -42,3 +42,12 @@ class KokuService:
                 break
         self.__koku.update_by_id(_id, key="categories", value=new_list)
         return self.__koku.find_by_id(_id)
+
+    def update_all_categories(self, _id, category_list):
+        self.__koku.update_by_id(_id, key="categories", value=category_list['categories'])
+        return self.__koku.find_by_id(_id)
+        # return category_list['categories']
+
+    def put_new_category(self, _id, new_category):
+        self.__koku.update_by_id(_id, key="categories", value=new_category, aggregate=PUSH)
+        return self.__koku.find_by_id(_id)

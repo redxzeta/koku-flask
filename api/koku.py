@@ -28,6 +28,18 @@ def get_koku_categories_by_id(_id):
     return jsonify(koku_service.get_koku_categories_by_id(_id)['categories'])
 
 
+@koku.route('/koku/<_id>/category/', methods=['PUT'])
+def update_koku_categories_by_id(_id):
+    obj = request.get_json()
+    return jsonify(koku_service.update_all_categories(_id, obj))
+
+
+@koku.route('/koku/<_id>/category/push/', methods=['PUT'])
+def new_koku_category_by_id(_id):
+    obj = request.get_json()
+    return jsonify(koku_service.put_new_category(_id,obj))
+
+
 @koku.route('/koku/<_id>/category/<_category_id>', methods=['GET'])
 def get_item_of_category_by_id(_id, _category_id):
     return jsonify(koku_service.get_item_of_category_by_id(_id, _category_id))
